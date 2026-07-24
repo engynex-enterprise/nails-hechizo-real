@@ -35,7 +35,7 @@ export default function GalleryTile({ item, className = "" }) {
       {/* Degradado inferior + textos */}
       <div className="absolute inset-0 bg-gradient-to-t from-plum/70 via-plum/10 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5">
-        <span className="inline-block text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-cream/90 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full">
+        <span className="inline-block text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-cream/90 bg-card/15 backdrop-blur-sm px-3 py-1 rounded-full">
           {item.category}
         </span>
         <h3 className="mt-3 text-cream text-xl leading-tight">{item.title}</h3>

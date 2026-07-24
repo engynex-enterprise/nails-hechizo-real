@@ -90,7 +90,7 @@ export default function Home() {
                     <v.icon size={20} />
                   </span>
                   <div>
-                    <h3 className="text-lg text-plum">{v.title}</h3>
+                    <h3 className="text-lg text-cream">{v.title}</h3>
                     <p className="text-sm text-muted mt-1 leading-relaxed">{v.text}</p>
                   </div>
                 </Reveal>

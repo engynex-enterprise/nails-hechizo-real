@@ -16,7 +16,7 @@ export default function TestimonialCard({ t, index = 0 }) {
           <Star
             key={i}
             size={16}
-            className={i < t.rating ? "text-gold" : "text-plum/15"}
+            className={i < t.rating ? "text-gold" : "text-cream/15"}
             fill={i < t.rating ? "#b89454" : "transparent"}
           />
         ))}
@@ -24,7 +24,7 @@ export default function TestimonialCard({ t, index = 0 }) {
       <blockquote className="mt-4 text-ink/85 leading-relaxed flex-1">
         “{t.text}”
       </blockquote>
-      <figcaption className="mt-6 pt-5 border-t border-plum/10 flex items-center gap-3">
+      <figcaption className="mt-6 pt-5 border-t border-cream/10 flex items-center gap-3">
         <span
           className="grid place-items-center h-11 w-11 rounded-full text-white font-semibold text-sm"
           style={{ background: avatarTints[index % avatarTints.length] }}
@@ -32,7 +32,7 @@ export default function TestimonialCard({ t, index = 0 }) {
           {initials}
         </span>
         <span>
-          <span className="block font-semibold text-plum leading-tight">
+          <span className="block font-semibold text-cream leading-tight">
             {t.name}
           </span>
           <span className="block text-xs text-muted">{t.service}</span>

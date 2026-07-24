@@ -8,7 +8,7 @@ export default function Stats() {
         <Reveal
           key={s.label}
           delay={i * 0.08}
-          className="text-center px-4 py-8 rounded-2xl bg-white/60 border border-plum/5"
+          className="text-center px-4 py-8 rounded-2xl bg-card/60 border border-cream/5"
         >
           <div className="font-display text-4xl sm:text-5xl text-gradient-gold">
             {s.value}

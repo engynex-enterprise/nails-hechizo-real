@@ -29,9 +29,9 @@ export default function ContactForm() {
   return (
     <form onSubmit={submit} className="card-soft p-7 space-y-5" noValidate>
       {sent ? (
-        <div className="flex items-center gap-3 rounded-xl bg-green-50 border border-green-200 p-4">
-          <CheckCircle2 className="text-green-600 shrink-0" size={24} />
-          <p className="text-sm text-green-800">
+        <div className="flex items-center gap-3 rounded-xl bg-green-500/10 border border-green-500/30 p-4">
+          <CheckCircle2 className="text-green-400 shrink-0" size={24} />
+          <p className="text-sm text-green-300">
             ¡Gracias! Recibimos tu mensaje y te responderemos muy pronto.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function ContactForm() {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <label className="block">
-          <span className="block text-sm font-medium text-plum mb-2">Nombre *</span>
+          <span className="block text-sm font-medium text-cream mb-2">Nombre *</span>
           <input
             type="text"
             value={form.name}
@@ -50,7 +50,7 @@ export default function ContactForm() {
           {errors.name ? <span className="block text-xs text-rose-dark mt-1.5">{errors.name}</span> : null}
         </label>
         <label className="block">
-          <span className="block text-sm font-medium text-plum mb-2">Teléfono</span>
+          <span className="block text-sm font-medium text-cream mb-2">Teléfono</span>
           <input
             type="tel"
             value={form.phone}
@@ -62,7 +62,7 @@ export default function ContactForm() {
       </div>
 
       <label className="block">
-        <span className="block text-sm font-medium text-plum mb-2">Correo *</span>
+        <span className="block text-sm font-medium text-cream mb-2">Correo *</span>
         <input
           type="email"
           value={form.email}
@@ -74,7 +74,7 @@ export default function ContactForm() {
       </label>
 
       <label className="block">
-        <span className="block text-sm font-medium text-plum mb-2">Mensaje *</span>
+        <span className="block text-sm font-medium text-cream mb-2">Mensaje *</span>
         <textarea
           rows={4}
           value={form.message}
@@ -94,7 +94,7 @@ export default function ContactForm() {
 }
 
 function cls(error) {
-  return `w-full rounded-xl border bg-cream/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-rose focus:ring-2 focus:ring-rose/20 ${
-    error ? "border-rose-dark" : "border-plum/15"
+  return `w-full rounded-xl border bg-card/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-rose focus:ring-2 focus:ring-rose/20 ${
+    error ? "border-rose-dark" : "border-cream/15"
   }`;
 }

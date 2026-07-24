@@ -57,12 +57,12 @@ export default function TestimonialsClient() {
           </div>
           <div className="h-12 w-px bg-plum/10 hidden sm:block" />
           <div>
-            <div className="font-display text-3xl text-plum">{list.length}+</div>
+            <div className="font-display text-3xl text-cream">{list.length}+</div>
             <div className="text-sm text-muted">Opiniones reales</div>
           </div>
           <div className="h-12 w-px bg-plum/10 hidden sm:block" />
           <div>
-            <div className="font-display text-3xl text-plum">98%</div>
+            <div className="font-display text-3xl text-cream">98%</div>
             <div className="text-sm text-muted">Volverían a visitarnos</div>
           </div>
         </div>
@@ -92,8 +92,8 @@ export default function TestimonialsClient() {
           </div>
 
           {sent ? (
-            <div className="card-soft p-6 flex items-center gap-4 border-l-4 border-green-500 mb-6">
-              <CheckCircle2 className="text-green-600 shrink-0" size={28} />
+            <div className="card-soft p-6 flex items-center gap-4 border-l-4 !border-l-green-500 mb-6">
+              <CheckCircle2 className="text-green-400 shrink-0" size={28} />
               <p className="text-sm text-ink/80">
                 ¡Gracias por tu comentario! Tu opinión ya aparece arriba. 💕
               </p>
@@ -176,7 +176,7 @@ export default function TestimonialsClient() {
 function Field({ label, error, children }) {
   return (
     <label className="block">
-      <span className="block text-sm font-medium text-plum mb-2">{label}</span>
+      <span className="block text-sm font-medium text-cream mb-2">{label}</span>
       {children}
       {error ? <span className="block text-xs text-rose-dark mt-1.5">{error}</span> : null}
     </label>
@@ -184,7 +184,7 @@ function Field({ label, error, children }) {
 }
 
 function inputCls(error) {
-  return `w-full rounded-xl border bg-cream/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-rose focus:ring-2 focus:ring-rose/20 ${
-    error ? "border-rose-dark" : "border-plum/15"
+  return `w-full rounded-xl border bg-card/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-rose focus:ring-2 focus:ring-rose/20 ${
+    error ? "border-rose-dark" : "border-cream/15"
   }`;
 }

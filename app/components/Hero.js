@@ -7,9 +7,9 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       {/* Fondo decorativo */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-blush blur-3xl opacity-80" />
-        <div className="absolute top-40 -left-24 h-80 w-80 rounded-full bg-rose/20 blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute top-40 -left-24 h-80 w-80 rounded-full bg-rose/12 blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 h-72 w-72 rounded-full bg-gold/8 blur-3xl" />
       </div>
 
       <div className="container-mor grid lg:grid-cols-2 gap-14 items-center pt-14 pb-20 lg:pt-20 lg:pb-28">
@@ -52,11 +52,13 @@ export default function Hero() {
           <Reveal delay={0.32}>
             <div className="mt-10 flex items-center gap-4">
               <div className="flex -space-x-3">
-                {["#c77d78", "#7a5560", "#b89454", "#a85e5a"].map((c) => (
-                  <span
-                    key={c}
-                    className="h-10 w-10 rounded-full border-2 border-cream"
-                    style={{ background: c }}
+                {["a1", "a2", "a3", "a4"].map((a) => (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    key={a}
+                    src={`/img/avatars/${a}.jpg`}
+                    alt="Clienta feliz"
+                    className="h-10 w-10 rounded-full border-2 border-noir object-cover"
                   />
                 ))}
               </div>
@@ -67,7 +69,7 @@ export default function Hero() {
                   ))}
                 </div>
                 <p className="text-sm text-muted mt-0.5">
-                  <strong className="text-plum">+5.000</strong> clientas felices
+                  <strong className="text-cream">+5.000</strong> clientas felices
                 </p>
               </div>
             </div>
@@ -90,9 +92,9 @@ export default function Hero() {
                 size={200}
                 className="absolute -right-8 -bottom-8 text-white/20"
               />
-              <div className="absolute top-6 left-6 flex items-center gap-2 bg-white/85 backdrop-blur px-4 py-2 rounded-full">
+              <div className="absolute top-6 left-6 flex items-center gap-2 bg-card/85 backdrop-blur px-4 py-2 rounded-full">
                 <span className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs font-medium text-plum">
+                <span className="text-xs font-medium text-cream">
                   Citas disponibles hoy
                 </span>
               </div>
@@ -105,14 +107,14 @@ export default function Hero() {
                   <Star key={i} size={14} fill="#b89454" className="text-gold" />
                 ))}
               </div>
-              <p className="mt-1 font-display text-2xl text-plum leading-none">4.9</p>
+              <p className="mt-1 font-display text-2xl text-cream leading-none">4.9</p>
               <p className="text-xs text-muted">Google Reviews</p>
             </div>
 
             {/* Tarjeta flotante: servicio */}
             <div className="hidden sm:block absolute -right-1 sm:-right-6 top-12 card-soft px-5 py-4 animate-float-slow">
               <p className="text-xs text-muted">Reservado ahora</p>
-              <p className="font-semibold text-plum">Balayage + corte</p>
+              <p className="font-semibold text-cream">Balayage + corte</p>
               <p className="text-xs text-rose-dark mt-1">✓ Confirmado</p>
             </div>
           </div>

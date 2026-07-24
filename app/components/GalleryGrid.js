@@ -23,8 +23,8 @@ export default function GalleryGrid() {
             onClick={() => setActive(f)}
             className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-all ${
               active === f
-                ? "bg-plum text-cream border-plum"
-                : "bg-white/60 text-plum border-plum/15 hover:border-rose hover:text-rose-dark"
+                ? "bg-gold text-noir border-gold"
+                : "bg-card/60 text-cream border-cream/15 hover:border-rose hover:text-rose-dark"
             }`}
           >
             {f}

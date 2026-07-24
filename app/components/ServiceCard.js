@@ -23,11 +23,11 @@ export default function ServiceCard({ service }) {
       <p className="mt-2 text-sm text-muted leading-relaxed flex-1">
         {service.blurb}
       </p>
-      <div className="mt-6 pt-5 border-t border-plum/10 flex items-center justify-between">
+      <div className="mt-6 pt-5 border-t border-cream/10 flex items-center justify-between">
         <span className="text-xs uppercase tracking-widest text-muted">
           {service.items.length} servicios
         </span>
-        <span className="text-sm font-semibold text-plum">{from}</span>
+        <span className="text-sm font-semibold text-cream">{from}</span>
       </div>
     </Link>
   );

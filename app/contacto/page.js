@@ -44,7 +44,7 @@ export default function ContactoPage() {
             <InfoItem icon={Clock} title="Horario de atención">
               {business.hours.map((h) => (
                 <span key={h.day} className="block">
-                  <strong className="text-plum font-medium">{h.day}:</strong> {h.time}
+                  <strong className="text-cream font-medium">{h.day}:</strong> {h.time}
                 </span>
               ))}
             </InfoItem>
@@ -72,7 +72,7 @@ export default function ContactoPage() {
           </div>
 
           {/* Mapa */}
-          <div className="mt-8 rounded-2xl overflow-hidden border border-plum/10 shadow-sm">
+          <div className="mt-8 rounded-2xl overflow-hidden border border-cream/10 shadow-sm">
             <iframe
               title="Zona de cobertura — Bogotá"
               src={`https://www.google.com/maps?q=${business.mapsQuery}&output=embed`}
@@ -116,7 +116,7 @@ function InfoItem({ icon: Icon, title, children }) {
         <Icon size={22} />
       </span>
       <div>
-        <p className="font-medium text-plum">{title}</p>
+        <p className="font-medium text-cream">{title}</p>
         <p className="text-muted text-sm mt-1 leading-relaxed">{children}</p>
       </div>
     </li>

@@ -42,18 +42,23 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-cream/90 backdrop-blur-md shadow-[0_10px_30px_-24px_rgba(59,37,48,0.8)]"
+          ? "bg-card/90 backdrop-blur-md shadow-[0_10px_30px_-24px_rgba(59,37,48,0.8)]"
           : "bg-transparent"
       }`}
     >
       <nav className="container-mor flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="grid place-items-center h-11 w-11 shrink-0 rounded-full bg-plum text-cream font-display text-sm tracking-tight leading-none group-hover:bg-rose-dark transition-colors">
-            {business.monogram}
+          <span className="h-12 w-12 shrink-0 rounded-full overflow-hidden ring-1 ring-gold/40 group-hover:ring-gold transition">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/img/logo.jpg"
+              alt={business.name}
+              className="h-full w-full object-cover object-[50%_30%] scale-125"
+            />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg sm:text-2xl text-plum tracking-tight leading-tight">
+            <span className="font-display text-lg sm:text-2xl text-gradient-gold tracking-tight leading-tight">
               {business.name}
             </span>
             <span className="text-[0.55rem] sm:text-[0.6rem] tracking-[0.22em] uppercase text-rose-dark mt-0.5">
@@ -88,7 +93,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           aria-label="Abrir menú"
-          className="lg:hidden grid place-items-center h-11 w-11 rounded-full bg-white/70 text-plum border border-plum/10"
+          className="lg:hidden grid place-items-center h-11 w-11 rounded-full bg-card/70 text-cream border border-cream/10"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -97,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-20 bottom-0 z-40 bg-cream transition-all duration-300 ${
+        className={`lg:hidden fixed inset-x-0 top-20 bottom-0 z-40 bg-card transition-all duration-300 ${
           open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -108,8 +113,8 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className={`block py-4 text-lg font-medium border-b border-plum/10 ${
-                  pathname === l.href ? "text-rose-dark" : "text-plum"
+                className={`block py-4 text-lg font-medium border-b border-cream/10 ${
+                  pathname === l.href ? "text-rose-dark" : "text-cream"
                 }`}
               >
                 {l.label}

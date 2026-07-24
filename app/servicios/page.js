@@ -30,7 +30,7 @@ export default function ServiciosPage() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-plum hover:bg-blush transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-cream hover:bg-blush transition-colors"
               >
                 {Icon ? <Icon size={16} className="text-rose-dark" /> : null}
                 {s.name}
@@ -65,14 +65,14 @@ export default function ServiciosPage() {
 
                 {/* Lista de precios */}
                 <Reveal delay={0.1}>
-                  <ul className="card-soft divide-y divide-plum/8 overflow-hidden">
+                  <ul className="card-soft divide-y divide-cream/8 overflow-hidden">
                     {s.items.map((item) => (
                       <li
                         key={item.name}
-                        className="flex items-center justify-between gap-4 px-6 py-5 hover:bg-cream transition-colors"
+                        className="flex items-center justify-between gap-4 px-6 py-5 hover:bg-card transition-colors"
                       >
                         <div>
-                          <p className="font-medium text-plum">{item.name}</p>
+                          <p className="font-medium text-cream">{item.name}</p>
                           <p className="flex items-center gap-1.5 text-xs text-muted mt-1">
                             <Clock size={13} />
                             {item.duration}

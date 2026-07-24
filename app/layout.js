@@ -41,6 +41,11 @@ export const metadata = {
       "Realzamos tu belleza natural sin salir de casa. Uñas, cabello, maquillaje y tratamientos a domicilio en Bogotá. Reserva tu cita online.",
     type: "website",
     locale: "es_CO",
+    images: ["/img/logo.jpg"],
+  },
+  icons: {
+    icon: "/img/logo.jpg",
+    apple: "/img/logo.jpg",
   },
 };
 
@@ -50,7 +55,7 @@ export default function RootLayout({ children }) {
       lang="es"
       className={`${playfair.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">
+      <body className="min-h-full flex flex-col bg-noir text-ink">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

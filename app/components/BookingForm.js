@@ -151,7 +151,7 @@ export default function BookingForm() {
   if (done) {
     return (
       <div className="card-soft p-8 sm:p-12 text-center max-w-2xl mx-auto">
-        <div className="grid place-items-center h-20 w-20 rounded-full bg-green-100 text-green-600 mx-auto">
+        <div className="grid place-items-center h-20 w-20 rounded-full bg-green-500/15 text-green-400 mx-auto">
           <PartyPopper size={38} />
         </div>
         <h2 className="mt-6 text-3xl">¡Tu cita fue registrada!</h2>
@@ -160,12 +160,12 @@ export default function BookingForm() {
           datos:
         </p>
         {serverSaved ? (
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200 px-4 py-2 text-sm text-green-800">
-            <Check size={16} className="text-green-600" />
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-green-500/10 border border-green-500/30 px-4 py-2 text-sm text-green-300">
+            <Check size={16} className="text-green-400" />
             Guardada automáticamente en la agenda de {business.name}
           </div>
         ) : null}
-        <div className="mt-8 text-left bg-cream rounded-2xl p-6 space-y-3">
+        <div className="mt-8 text-left bg-noir/60 border border-cream/10 rounded-2xl p-6 space-y-3">
           <Row label="Servicio" value={data.service} />
           {data.price ? <Row label="Valor" value={data.price} /> : null}
           <Row label="Fecha" value={prettyDate} />
@@ -218,10 +218,10 @@ export default function BookingForm() {
                 <span
                   className={`grid place-items-center h-11 w-11 rounded-full border-2 transition-colors ${
                     complete
-                      ? "bg-plum border-plum text-cream"
+                      ? "bg-gold border-gold text-noir"
                       : active
-                        ? "bg-rose border-rose text-white"
-                        : "bg-white border-plum/15 text-muted"
+                        ? "bg-rose border-rose text-noir"
+                        : "bg-card border-cream/15 text-muted"
                   }`}
                 >
                   {complete ? <Check size={18} /> : <StepIcon size={18} />}
@@ -237,7 +237,7 @@ export default function BookingForm() {
               {i < steps.length - 1 ? (
                 <span
                   className={`flex-1 h-0.5 mx-2 -mt-6 ${
-                    step > s.id ? "bg-plum" : "bg-plum/15"
+                    step > s.id ? "bg-gold" : "bg-cream/15"
                   }`}
                 />
               ) : null}
@@ -264,8 +264,8 @@ export default function BookingForm() {
                     onClick={() => set({ category: c.id, service: "", price: "", duration: "" })}
                     className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium border transition-all ${
                       sel
-                        ? "bg-plum text-cream border-plum"
-                        : "bg-white text-plum border-plum/15 hover:border-rose"
+                        ? "bg-gold text-noir border-gold"
+                        : "bg-card text-cream border-cream/15 hover:border-rose"
                     }`}
                   >
                     {Icon ? <Icon size={16} /> : null}
@@ -292,11 +292,11 @@ export default function BookingForm() {
                       className={`text-left p-4 rounded-2xl border transition-all ${
                         sel
                           ? "border-rose bg-blush/50 ring-2 ring-rose/20"
-                          : "border-plum/10 hover:border-rose/50"
+                          : "border-cream/10 hover:border-rose/50"
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-medium text-plum">{it.name}</span>
+                        <span className="font-medium text-cream">{it.name}</span>
                         {sel ? <Check size={18} className="text-rose-dark" /> : null}
                       </div>
                       <div className="flex items-center gap-3 mt-1 text-xs text-muted">
@@ -330,14 +330,14 @@ export default function BookingForm() {
             </p>
 
             <label className="block mb-6">
-              <span className="block text-sm font-medium text-plum mb-2">Fecha</span>
+              <span className="block text-sm font-medium text-cream mb-2">Fecha</span>
               <input
                 type="date"
                 min={minDate}
                 value={data.date}
                 onChange={(e) => set({ date: e.target.value })}
-                className={`w-full sm:w-64 rounded-xl border bg-cream/60 px-4 py-3 text-sm outline-none focus:border-rose focus:ring-2 focus:ring-rose/20 ${
-                  errors.date ? "border-rose-dark" : "border-plum/15"
+                className={`w-full sm:w-64 rounded-xl border bg-card/60 px-4 py-3 text-sm outline-none focus:border-rose focus:ring-2 focus:ring-rose/20 ${
+                  errors.date ? "border-rose-dark" : "border-cream/15"
                 }`}
               />
               {errors.date ? (
@@ -345,7 +345,7 @@ export default function BookingForm() {
               ) : null}
             </label>
 
-            <span className="block text-sm font-medium text-plum mb-2">Hora disponible</span>
+            <span className="block text-sm font-medium text-cream mb-2">Hora disponible</span>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2.5">
               {timeSlots.map((t) => {
                 const sel = data.time === t;
@@ -356,8 +356,8 @@ export default function BookingForm() {
                     onClick={() => set({ time: t })}
                     className={`py-2.5 rounded-xl text-sm border transition-all ${
                       sel
-                        ? "bg-plum text-cream border-plum"
-                        : "bg-white text-plum border-plum/15 hover:border-rose"
+                        ? "bg-gold text-noir border-gold"
+                        : "bg-card text-cream border-cream/15 hover:border-rose"
                     }`}
                   >
                     {t}
@@ -380,7 +380,7 @@ export default function BookingForm() {
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               <label className="block">
-                <span className="block text-sm font-medium text-plum mb-2">Nombre completo *</span>
+                <span className="block text-sm font-medium text-cream mb-2">Nombre completo *</span>
                 <input
                   type="text"
                   value={data.name}
@@ -391,7 +391,7 @@ export default function BookingForm() {
                 {errors.name ? <Err msg={errors.name} /> : null}
               </label>
               <label className="block">
-                <span className="block text-sm font-medium text-plum mb-2">Teléfono / WhatsApp *</span>
+                <span className="block text-sm font-medium text-cream mb-2">Teléfono / WhatsApp *</span>
                 <input
                   type="tel"
                   value={data.phone}
@@ -403,7 +403,7 @@ export default function BookingForm() {
               </label>
             </div>
             <label className="block mt-5">
-              <span className="block text-sm font-medium text-plum mb-2">
+              <span className="block text-sm font-medium text-cream mb-2">
                 Dirección para el servicio a domicilio *
               </span>
               <input
@@ -416,7 +416,7 @@ export default function BookingForm() {
               {errors.address ? <Err msg={errors.address} /> : null}
             </label>
             <label className="block mt-5">
-              <span className="block text-sm font-medium text-plum mb-2">Correo (opcional)</span>
+              <span className="block text-sm font-medium text-cream mb-2">Correo (opcional)</span>
               <input
                 type="email"
                 value={data.email}
@@ -427,7 +427,7 @@ export default function BookingForm() {
               {errors.email ? <Err msg={errors.email} /> : null}
             </label>
             <label className="block mt-5">
-              <span className="block text-sm font-medium text-plum mb-2">
+              <span className="block text-sm font-medium text-cream mb-2">
                 Notas para el equipo (opcional)
               </span>
               <textarea
@@ -448,7 +448,7 @@ export default function BookingForm() {
             <p className="text-sm text-muted mb-6">
               Confirma que todo esté correcto antes de enviar.
             </p>
-            <div className="bg-cream rounded-2xl p-6 space-y-3">
+            <div className="bg-card rounded-2xl p-6 space-y-3">
               <Row label="Servicio" value={data.service} />
               {data.price ? <Row label="Valor aprox." value={data.price} /> : null}
               {data.duration ? <Row label="Duración" value={data.duration} /> : null}
@@ -469,7 +469,7 @@ export default function BookingForm() {
         ) : null}
 
         {/* Navegación */}
-        <div className="flex items-center justify-between mt-8 pt-6 border-t border-plum/10">
+        <div className="flex items-center justify-between mt-8 pt-6 border-t border-cream/10">
           <button
             type="button"
             onClick={back}
@@ -505,7 +505,7 @@ function Row({ label, value }) {
   return (
     <div className="flex justify-between gap-4 text-sm">
       <span className="text-muted">{label}</span>
-      <span className="font-medium text-plum text-right">{value}</span>
+      <span className="font-medium text-cream text-right">{value}</span>
     </div>
   );
 }
@@ -515,8 +515,8 @@ function Err({ msg }) {
 }
 
 function inputCls(error) {
-  return `w-full rounded-xl border bg-cream/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-rose focus:ring-2 focus:ring-rose/20 ${
-    error ? "border-rose-dark" : "border-plum/15"
+  return `w-full rounded-xl border bg-card/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-rose focus:ring-2 focus:ring-rose/20 ${
+    error ? "border-rose-dark" : "border-cream/15"
   }`;
 }
 

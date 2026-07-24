@@ -40,15 +40,15 @@ export default function ReservarPage() {
         </div>
 
         <div className="mt-14 max-w-3xl mx-auto card-soft p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <span className="flex items-center gap-2 text-plum">
+          <span className="flex items-center gap-2 text-cream">
             <MapPin size={18} className="text-rose-dark" />
             {business.address}, {business.city}
           </span>
-          <span className="flex items-center gap-2 text-plum">
+          <span className="flex items-center gap-2 text-cream">
             <Clock size={18} className="text-rose-dark" />
             {business.hours[0].time}
           </span>
-          <a href={business.phoneHref} className="flex items-center gap-2 text-plum hover:text-rose-dark">
+          <a href={business.phoneHref} className="flex items-center gap-2 text-cream hover:text-rose-dark">
             <Phone size={18} className="text-rose-dark" />
             {business.phone}
           </a>

@@ -1,22 +1,29 @@
 @import "tailwindcss";
 
 /* =========================================================
-   MOR · Estética & Belleza — Sistema de diseño
-   Paleta: crema / nude / rosa empolvado / vino / dorado
+   NAILS HECHIZO REAL — Sistema de diseño
+   Lujo oscuro: negro + dorado + rosa sakura (inspirado en el logo)
    ========================================================= */
 @theme {
-  --color-cream: #fcf8f5;
-  --color-sand: #f5ebe4;
-  --color-blush: #f3ded9;
-  --color-rose: #c77d78;
-  --color-rose-dark: #a85e5a;
-  --color-plum: #3b2530;
-  --color-plum-soft: #533a46;
-  --color-mauve: #7a5560;
-  --color-gold: #b89454;
-  --color-gold-light: #d8be86;
-  --color-ink: #3a2e30;
-  --color-muted: #8a7a7a;
+  --color-noir: #0c0809; /* fondo base (más oscuro) */
+  --color-plum: #170f13; /* paneles / footer / overlays */
+  --color-sand: #120c0f; /* secciones alternas */
+  --color-card: #1b1319; /* superficie de tarjetas */
+  --color-blush: #2a1a21; /* chips con tinte rosa */
+  --color-line: #3d2d34; /* bordes sutiles */
+
+  --color-cream: #f4eae1; /* texto claro principal */
+  --color-ink: #f0e5dc; /* texto de cuerpo */
+  --color-muted: #ab9a94; /* texto atenuado */
+
+  --color-gold: #c9a24b;
+  --color-gold-light: #ecd39a;
+  --color-gold-deep: #9a7127;
+
+  --color-rose: #e69bad; /* rosa sakura */
+  --color-rose-dark: #d67f96; /* acento rosa visible en oscuro */
+  --color-mauve: #b98a99;
+  --color-plum-soft: #241820;
 
   --font-display: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-poppins), system-ui, sans-serif;
@@ -51,7 +58,7 @@ html {
 }
 
 body {
-  background: var(--color-cream);
+  background: var(--color-noir);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -60,8 +67,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-rose);
-  color: #fff;
+  background: var(--color-gold);
+  color: #17100b;
 }
 
 h1,
@@ -70,7 +77,7 @@ h3,
 h4 {
   font-family: var(--font-display);
   letter-spacing: -0.01em;
-  color: var(--color-plum);
+  color: var(--color-cream);
 }
 
 ::-webkit-scrollbar {
@@ -80,7 +87,7 @@ h4 {
   background: var(--color-sand);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-rose);
+  background: var(--color-gold-deep);
   border-radius: 999px;
   border: 2px solid var(--color-sand);
 }
@@ -102,7 +109,7 @@ h4 {
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-rose-dark);
+  color: var(--color-gold);
 }
 
 .btn {
@@ -124,56 +131,53 @@ h4 {
     background-color 0.25s ease,
     color 0.25s ease;
 }
-.btn-primary {
-  background: var(--color-plum);
-  color: #fff;
-  box-shadow: 0 12px 30px -12px rgba(59, 37, 48, 0.6);
-}
+.btn-primary,
 .btn-gold {
-  background: linear-gradient(120deg, var(--color-gold), var(--color-gold-light));
-  color: var(--color-plum);
-  box-shadow: 0 12px 30px -14px rgba(184, 148, 84, 0.7);
+  background: linear-gradient(120deg, var(--color-gold-deep), var(--color-gold) 45%, var(--color-gold-light));
+  color: #1a1108;
+  box-shadow: 0 14px 34px -14px rgba(201, 162, 75, 0.6);
 }
 .btn-outline {
-  border: 1.5px solid var(--color-plum);
-  color: var(--color-plum);
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold-light);
 }
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.7);
-  color: var(--color-plum);
-  border: 1px solid rgba(59, 37, 48, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-cream);
+  border: 1px solid rgba(244, 234, 225, 0.16);
 }
 .btn:hover {
   transform: translateY(-2px);
 }
-.btn-primary:hover {
-  box-shadow: 0 18px 38px -14px rgba(59, 37, 48, 0.7);
+.btn-primary:hover,
+.btn-gold:hover {
+  box-shadow: 0 20px 42px -14px rgba(201, 162, 75, 0.75);
 }
 .btn-outline:hover {
-  background: var(--color-plum);
-  color: #fff;
+  background: var(--color-gold);
+  color: #1a1108;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(100deg, var(--color-gold), var(--color-rose-dark), var(--color-gold));
+  background: linear-gradient(100deg, var(--color-gold), var(--color-gold-light), var(--color-rose), var(--color-gold));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .card-soft {
-  background: #fff;
+  background: var(--color-card);
   border-radius: 1.5rem;
-  border: 1px solid rgba(59, 37, 48, 0.06);
-  box-shadow: 0 26px 60px -42px rgba(59, 37, 48, 0.5);
+  border: 1px solid rgba(201, 162, 75, 0.16);
+  box-shadow: 0 30px 70px -46px rgba(0, 0, 0, 0.9);
 }
 
-/* Enlaces del menú con subrayado animado */
+/* Enlaces del menú con subrayado dorado animado */
 .nav-link {
   position: relative;
   font-weight: 500;
   font-size: 0.9rem;
-  color: var(--color-plum);
+  color: var(--color-cream);
   transition: color 0.2s ease;
 }
 .nav-link::after {
@@ -183,24 +187,24 @@ h4 {
   bottom: -6px;
   height: 2px;
   width: 0;
-  background: var(--color-rose);
+  background: var(--color-gold);
   transition: width 0.28s ease;
 }
 .nav-link:hover,
 .nav-link.active {
-  color: var(--color-rose-dark);
+  color: var(--color-gold-light);
 }
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
 
-/* Placeholder de imágenes: degradado elegante (reemplazar por fotos reales) */
+/* Placeholder de imágenes (degradado, si faltara una foto) */
 .photo-fallback {
   background:
-    radial-gradient(120% 120% at 20% 15%, rgba(216, 190, 134, 0.55), transparent 55%),
-    radial-gradient(120% 120% at 85% 85%, rgba(199, 125, 120, 0.55), transparent 50%),
-    linear-gradient(135deg, #efd9d2, #e7c6be 45%, #d9b7ac);
+    radial-gradient(120% 120% at 20% 15%, rgba(201, 162, 75, 0.35), transparent 55%),
+    radial-gradient(120% 120% at 85% 85%, rgba(214, 127, 150, 0.35), transparent 50%),
+    linear-gradient(135deg, #241820, #17101400 45%, #1b1319);
 }
 
 /* Franja decorativa dorada */

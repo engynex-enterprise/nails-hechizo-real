@@ -7,7 +7,7 @@ import { faqs } from "../lib/data";
 export default function FAQ() {
   const [open, setOpen] = useState(0);
   return (
-    <div className="max-w-3xl mx-auto divide-y divide-plum/10">
+    <div className="max-w-3xl mx-auto divide-y divide-cream/10">
       {faqs.map((item, i) => {
         const isOpen = open === i;
         return (
@@ -16,7 +16,7 @@ export default function FAQ() {
               onClick={() => setOpen(isOpen ? -1 : i)}
               className="w-full flex items-center justify-between gap-4 py-5 text-left"
             >
-              <span className="font-medium text-plum text-lg">{item.q}</span>
+              <span className="font-medium text-cream text-lg">{item.q}</span>
               <Plus
                 size={22}
                 className={`shrink-0 text-rose-dark transition-transform duration-300 ${

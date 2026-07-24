@@ -71,13 +71,13 @@ export default function PreciosPage() {
               <div
                 className={`relative h-full rounded-3xl p-8 flex flex-col ${
                   p.featured
-                    ? "bg-plum text-cream shadow-[0_40px_80px_-40px_rgba(59,37,48,0.7)] md:-translate-y-4"
+                    ? "bg-plum text-cream border border-gold/30 shadow-[0_40px_80px_-30px_rgba(201,162,75,0.35)] md:-translate-y-4"
                     : "card-soft"
                 }`}
               >
                 {p.featured ? (
-                  <span className="absolute top-5 right-5 inline-flex items-center gap-1 text-[0.65rem] font-semibold uppercase tracking-widest bg-gold text-plum px-3 py-1 rounded-full">
-                    <Star size={12} fill="#3b2530" /> Popular
+                  <span className="absolute top-5 right-5 inline-flex items-center gap-1 text-[0.65rem] font-semibold uppercase tracking-widest bg-gold text-noir px-3 py-1 rounded-full">
+                    <Star size={12} fill="#1a1108" /> Popular
                   </span>
                 ) : null}
                 <h3 className={`text-2xl ${p.featured ? "!text-cream" : ""}`}>
@@ -139,7 +139,7 @@ export default function PreciosPage() {
               return (
                 <Reveal key={s.id} delay={(i % 2) * 0.08}>
                   <div className="card-soft p-7 h-full">
-                    <div className="flex items-center gap-3 pb-5 border-b border-plum/10">
+                    <div className="flex items-center gap-3 pb-5 border-b border-cream/10">
                       <span className="grid place-items-center h-11 w-11 rounded-xl bg-blush text-rose-dark">
                         {Icon ? <Icon size={20} /> : null}
                       </span>
@@ -149,7 +149,7 @@ export default function PreciosPage() {
                       {s.items.map((item) => (
                         <li key={item.name} className="flex items-baseline gap-3">
                           <span className="text-ink/80">{item.name}</span>
-                          <span className="flex-1 border-b border-dotted border-plum/20 translate-y-[-3px]" />
+                          <span className="flex-1 border-b border-dotted border-cream/20 translate-y-[-3px]" />
                           <span className="font-medium text-rose-dark whitespace-nowrap">
                             {item.price}
                           </span>

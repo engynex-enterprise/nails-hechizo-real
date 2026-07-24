@@ -10,11 +10,16 @@ export default function Footer() {
       <div className="container-mor py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         {/* Marca */}
         <div>
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="grid place-items-center h-11 w-11 shrink-0 rounded-full bg-cream text-plum font-display text-sm tracking-tight">
-              {business.monogram}
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-16 w-16 shrink-0 rounded-full overflow-hidden ring-1 ring-gold/40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/img/logo.jpg"
+                alt={business.name}
+                className="h-full w-full object-cover object-[50%_30%] scale-125"
+              />
             </span>
-            <span className="font-display text-xl sm:text-2xl text-cream leading-tight">
+            <span className="font-display text-xl sm:text-2xl text-gradient-gold leading-tight">
               {business.name}
             </span>
           </div>
