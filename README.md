@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nails Hechizo Real
 
-## Getting Started
+Sitio web moderno y profesional para un servicio de belleza y estética
+**a domicilio en Bogotá** (uñas, cabello, cejas & pestañas, maquillaje y
+spa/facial), construido con **Next.js 16 (App Router)**, **React 19** y
+**Tailwind CSS v4**.
 
-First, run the development server:
+## ✨ Características
+
+- **Inicio**: hero animado, cinta de servicios, servicios destacados, sección
+  "sobre nosotras", estadísticas, vista previa de galería y testimonios.
+- **Servicios** (`/servicios`): menú completo por categoría con precio y duración.
+- **Precios** (`/precios`): paquetes destacados + lista de precios completa.
+- **Galería** (`/galeria`): portafolio de trabajos con **filtros por categoría**.
+- **Testimonios** (`/testimonios`): opiniones de clientas + **formulario para
+  dejar comentarios** con calificación por estrellas.
+- **Reservar** (`/reservar`): **agenda de citas en 4 pasos** (servicio → fecha y
+  hora → datos → confirmación) con validación y confirmación por WhatsApp.
+- **Contacto** (`/contacto`): datos, mapa, horarios, redes y preguntas frecuentes.
+- Diseño **100% responsive**, botón flotante de **WhatsApp**, animaciones suaves
+  (framer-motion), tipografías elegantes (Playfair Display + Poppins) y SEO básico.
+
+## 🚀 Cómo ejecutar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install       # instalar dependencias (ya instaladas)
+npm run dev       # entorno de desarrollo → http://localhost:3000
+npm run build     # compilar para producción
+npm run start     # servir la versión de producción
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Cómo personalizar
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Casi todo el contenido vive en un solo lugar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **`app/lib/data.js`** — nombre del negocio, teléfono, WhatsApp, dirección,
+  horarios, redes sociales, **servicios y precios**, galería, testimonios,
+  equipo y preguntas frecuentes.
+- **Fotos reales**: en `galleryItems` de `app/lib/data.js` reemplaza
+  `image: null` por la URL/ruta de tus fotos (p. ej. `image: "/trabajos/unas1.jpg"`
+  colocando la imagen en la carpeta `public/`). Sin foto, se muestra un
+  degradado elegante de respaldo.
+- **Colores y tipografías**: `app/globals.css` (bloque `@theme`, paleta
+  crema/nude/rosa/vino/dorado).
+- **Menú y logo**: `app/components/Navbar.js`.
 
-## Learn More
+## 📅 Google Calendar automático
 
-To learn more about Next.js, take a look at the following resources:
+Cada reserva se envía al endpoint `POST /api/reservar`. Si configuras las
+credenciales de Google, la cita se crea **automáticamente en el Google Calendar
+del negocio** (con fecha, hora, servicio, cliente y la dirección del domicilio).
+Si no las configuras, el sitio sigue funcionando y el cliente puede agregar la
+cita con el botón “Agregar a Google Calendar”.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Configuración (una sola vez):**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Crea un proyecto en [Google Cloud Console](https://console.cloud.google.com/)
+   y habilita la **Google Calendar API**.
+2. Crea una **cuenta de servicio** y descarga su clave **JSON**.
+3. Abre el Google Calendar del negocio → *Configuración → Compartir con
+   determinadas personas* → agrega el `client_email` de la cuenta de servicio
+   con permiso **“Hacer cambios en los eventos”**.
+4. Copia `.env.example` a `.env.local` y completa:
+   - `GOOGLE_CLIENT_EMAIL` — el `client_email` del JSON.
+   - `GOOGLE_PRIVATE_KEY` — la `private_key` del JSON (entre comillas, con los `\n`).
+   - `GOOGLE_CALENDAR_ID` — el correo/ID del calendario.
+5. Reinicia el servidor (`npm run dev`). En producción (Vercel), agrega esas
+   mismas variables en el panel de *Environment Variables*.
 
-## Deploy on Vercel
+## 🔌 Siguientes pasos sugeridos (opcional)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Enviar también un correo/WhatsApp automático al confirmar (SendGrid, Resend, etc.).
+- Guardar reservas y comentarios en una base de datos.
+- Añadir tus redes sociales reales en `app/lib/data.js` (`social`).
+- Desplegar en Vercel con tu dominio.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Hecho con cariño para realzar tu belleza ✦
